@@ -81,10 +81,10 @@ class DataTransformation:
             x_train_after_fit_tran_arr=preprocessing_obj.fit_transform(x_train)
             x_test_fit_arr=preprocessing_obj.transform(x_test)
 
-            train_feature_tearget_arr=np.c_[
+            train_arr=np.c_[
                 x_train_after_fit_tran_arr,np.array(y_train)
             ]
-            test_feature_arr=np.c_[
+            test_arr=np.c_[
                 x_test_fit_arr,np.array(y_test)
             ]
             logging.info(f"Saved preprocessing object.")
@@ -94,7 +94,7 @@ class DataTransformation:
 
 
             return(
-               train_feature_tearget_arr, test_feature_arr,
+               train_arr, test_arr,
                self.data_tranformation_config.preprocessor_obj_file_path
 
             )
